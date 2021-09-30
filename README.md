@@ -11,26 +11,60 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<div align="center">
+  
+  ![](https://vectr.com/kerff/ddbmvyZmm.svg?width=600&height=300&select=aNbKxciPh)
+  
+  Quirky little dart library for generating badges for your cli apps.
+  
+  <!-- ![GitHub file size in bytes](https://img.shields.io/github/size/nombrekeff/cli-badges/index.js?style=flat-square)
+  [![npm](https://img.shields.io/npm/v/cli-badges?label=version&style=flat-square)](https://www.npmjs.com/package/cli-badges)
+   -->
+
+<!-- TODO: add badges -->
+
+</div>
+
+---
+
+Print badges to the terminal. Yup, those nifty little thingies we use on readmes, but for CLI apps.
 
 ## Features
+* Easy to use
+* Inbuilt themes
+* Customizable
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+This is what it can do:
+```dart
+var failedBadge  = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
+var successBadge = Badge(label: 'success', message: '2').green();
+var skippedBadge = Badge.yellow(label: 'skipped',  message: '2');
 
-## Getting started
+print(
+    Badge.inline([
+        failedBadge, 
+        skippedBadge, 
+        successBadge
+    ]),
+);
+```
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+The above would output something similar to the terminal:
 
+![](./images/output-example.png)
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Usage is simple, import the package and start creating Badges!
 
 ```dart
-const like = 'sample';
+import 'package:cli_badges/cli_badges.dart';
+
+var failedBadge = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
+
+print(failedBadge);
 ```
+
+Some examples are available under `/examples`.
 
 ## Additional information
 

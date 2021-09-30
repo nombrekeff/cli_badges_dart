@@ -33,7 +33,7 @@ class Colors {
   static const String backgroundWhite = '\u001b[47m';
 
   // * backgroud Bright color
-  static const String backgroundBrightBlack = '\u001b[40;1m';
+  static const String backgroundBrightBlack = '\u001b[100;1m';
   static const String backgroundBrightRed = '\u001b[41;1m';
   static const String backgroundBrightGreen = '\u001b[42;1m';
   static const String backgroundBrightYellow = '\u001b[43;1m';
@@ -109,9 +109,12 @@ class Colors {
     return mappedColor(bgColorName, text);
   }
 
-  String color256(String text, int code) {
-    var isValidAnsiColor = code < 0 || code > 255;
+  String color256(
+    int code,
+    String text,
+  ) {
+    var isValidAnsiColor = code > 0 || code <= 255;
 
-    return isValidAnsiColor ? '\u001b[38;5;${code}m$text$reset' : text;
+    return isValidAnsiColor ? '\u001b[${code}m$text$reset' : text;
   }
 }

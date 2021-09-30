@@ -2,6 +2,16 @@ import 'package:cli_badges/src/badge_theme.dart';
 import 'package:cli_badges/src/util.dart';
 
 class Badge {
+  static inline(
+    List<Badge> badges, {
+    String separator = ' ',
+    int separation = 2,
+  }) {
+    assert(separation > 0, 'Separation must be a positive number');
+
+    return badges.join(separator * separation);
+  }
+
   final String label;
   final String? message;
   final BadgeTheme theme;

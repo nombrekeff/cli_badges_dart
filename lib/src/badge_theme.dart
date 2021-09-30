@@ -14,24 +14,44 @@ class BadgeTheme {
   final String messageBg;
   final String messageColor;
 
+  final int? messageBgCode;
+  final int? messageColorCode;
+
   final String labelBg;
   final String labelColor;
+
+  final int? labelBgCode;
+  final int? labelColorCode;
 
   BadgeTheme({
     this.messageBg = 'blue',
     this.messageColor = 'backgroundWhite',
     this.labelBg = 'brightBlack',
     this.labelColor = 'white',
+    this.messageBgCode,
+    this.messageColorCode,
+    this.labelBgCode,
+    this.labelColorCode,
   });
 
   colorLabel(String label) {
-    var labelWithBg = _colors.mappedBgColor(labelBg, label);
-    return _colors.mappedColor(labelColor, labelWithBg);
+    var labelWithBg = labelBgCode == null
+        ? _colors.mappedBgColor(labelBg, label)
+        : _colors.color256(labelBgCode!, label);
+
+    return labelColorCode == null
+        ? _colors.mappedColor(labelColor, labelWithBg)
+        : _colors.color256(labelColorCode!, labelWithBg);
   }
 
   colorMessage(String message) {
-    var messageWithBg = _colors.mappedBgColor(messageBg, message);
-    return _colors.mappedColor(messageColor, messageWithBg);
+    var messageWithBg = messageBgCode == null
+        ? _colors.mappedBgColor(messageBg, message)
+        : _colors.color256(messageBgCode!, message);
+
+    return messageColorCode == null
+        ? _colors.mappedColor(messageColor, messageWithBg)
+        : _colors.color256(messageColorCode!, messageWithBg);
   }
 
   swapped() {
