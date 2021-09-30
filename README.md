@@ -87,9 +87,77 @@ Badge.red(
 Badge(...).red();
 ```
 
+### Some more examples:
+You could create a donate badge:
+
+```dart
+var donateBadge = Badge.cyan(label: '❤️ donate', message: 'please?');
+
+print(donateBadge);
+```
+
+![](./images/donate-output-example.png)
+
+You can also only show the label:
+
+```dart
+var onlyLabel = Badge(
+    label: '❤️ donate', 
+    labelColorCode: 169
+);
+
+print(onlyLabel);
+```
+
+> ###### Example output is a mock, console output will vary slightly from terminal to terminal.
+
+## Badge Structure <!-- omit in toc -->
+
+A badge is conformed of a **label** and a **message** `<label>:<message>`. Each segment can be customized, by changing bg color, text color and style.
+
+## Colors
+
+This is the list of all available colors:
+* red
+* black
+* green
+* yellow
+* blue
+* magenta
+* cyan
+* white
+* brightRed
+* brightBlack
+* brightGreen
+* brightYellow
+* brightBlue
+* brightMagenta
+* brightCyan
+* brightWhite
+
 ## Additional info
 
 There is a complete example [here](https://github.com/nombrekeff/cli_badges_dart/tree/main/example)
 
 If you encounter any problems or fancy a feature to be added please head over to the GitHub [repository](https://github.com/nombrekeff/cli_badges_dart/) and [drop an issue](https://github.com/nombrekeff/cli_badges_dart/issues/new).
 
+## Want badges for some other environment or language?
+
+**cli-badges** is also available in other languages:
+
+- `Python` [@haideralipunjabi/cli-badges](https://github.com/haideralipunjabi/cli-badges)
+- `Deno` [@Delta456/cli_badges](https://github.com/Delta456/cli_badges)
+
+
+## Support the project <!-- omit in toc -->
+
+I tend to open source anything I can, and love to help people that might need help with the project.
+
+However, if you are using this project and are happy with it or just want to encourage me to continue creating stuff, there are few ways you can do so:
+
+- Starring and sharing the project 🚀
+- Reporting bugs 🐛
+- Sending feedback
+- Or even coding :P
+
+Thanks! ❤️
