@@ -170,7 +170,7 @@ If you encounter any problems or fancy a feature to be added please head over to
 ## Want badges for some other environment or language?
 
 **cli-badges** is also available in other languages:
-
+- `JS` [@nombrekeff/cli-badges](https://github.com/nombrekeff/cli-badges)
 - `Python` [@haideralipunjabi/cli-badges](https://github.com/haideralipunjabi/cli-badges)
 - `Deno` [@Delta456/cli_badges](https://github.com/Delta456/cli_badges)
 
