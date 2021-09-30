@@ -65,7 +65,7 @@ print(failedBadge);
 ```
 
 There are 3 main ways to create a themed badge:
-#### Passing in the theme directly to the Badge constructor:
+#### 1: Passing in the theme directly to the Badge constructor:
 ```dart
 Badge(
     label: 'failed', 
@@ -74,7 +74,7 @@ Badge(
 );
 ```
 
-#### Using named constructors:
+#### 2: Using named constructors:
 ```dart
 Badge.red(
     label: 'failed', 
@@ -82,7 +82,7 @@ Badge.red(
 );
 ```
 
-#### Or by calling the predefined theme methods: 
+#### 3: Or by calling the predefined theme methods: 
 ```dart
 Badge(...).red();
 ```
