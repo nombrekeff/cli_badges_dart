@@ -33,7 +33,21 @@ class Badge {
     this.messageWidth,
   }) : theme = BadgeTheme.red;
 
+  Badge.failed({
+    required this.label,
+    this.message,
+    this.labelWidth,
+    this.messageWidth,
+  }) : theme = BadgeTheme.red;
+
   Badge.green({
+    required this.label,
+    this.message,
+    this.labelWidth,
+    this.messageWidth,
+  }) : theme = BadgeTheme.green;
+
+  Badge.success({
     required this.label,
     this.message,
     this.labelWidth,
@@ -47,7 +61,21 @@ class Badge {
     this.messageWidth,
   }) : theme = BadgeTheme.blue;
 
+  Badge.info({
+    required this.label,
+    this.message,
+    this.labelWidth,
+    this.messageWidth,
+  }) : theme = BadgeTheme.blue;
+
   Badge.yellow({
+    required this.label,
+    this.message,
+    this.labelWidth,
+    this.messageWidth,
+  }) : theme = BadgeTheme.yellow;
+
+  Badge.warning({
     required this.label,
     this.message,
     this.labelWidth,
@@ -74,6 +102,10 @@ class Badge {
   Badge yellow() => copyWith(theme: BadgeTheme.yellow);
   Badge magenta() => copyWith(theme: BadgeTheme.magenta);
   Badge cyan() => copyWith(theme: BadgeTheme.cyan);
+  Badge success() => copyWith(theme: BadgeTheme.green);
+  Badge failed() => copyWith(theme: BadgeTheme.red);
+  Badge info() => copyWith(theme: BadgeTheme.blue);
+  Badge warning() => copyWith(theme: BadgeTheme.yellow);
 
   Badge copyWith({
     String? label,

@@ -135,6 +135,19 @@ This is the list of all available colors:
 * brightCyan
 * brightWhite
 
+### Inbuilt Themes <!-- omit in toc -->
+
+- **red** : Red Message Background
+- **green** : Green Message Background
+- **blue** : Blue Message Background
+- **yellow** : Black Colored Message on Yellow Background
+- **cyan** : Black Colored Message on Cyan Background
+- **magenta** : Black Colored Message on Magenta Background
+- **success** : (_'Success'_) Message on Green Background
+- **failed** : (_'Failed'_) Message on Red Background
+- **warning** : (_'Warning'_) Message on Yellow Background
+- **info** : (_'Warning'_) Message on Blue Background
+
 ## Additional info
 
 There is a complete example [here](https://github.com/nombrekeff/cli_badges_dart/tree/main/example)
