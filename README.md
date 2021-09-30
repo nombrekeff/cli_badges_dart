@@ -64,10 +64,32 @@ var failedBadge = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
 print(failedBadge);
 ```
 
-Some examples are available under `/examples`.
+There are 3 main ways to create a themed badge:
+#### Passing in the theme directly to the Badge constructor:
+```dart
+Badge(
+    label: 'failed', 
+    message: '2', 
+    theme: BadgeTheme.red,
+);
+```
 
-## Additional information
+#### Using named constructors:
+```dart
+Badge.red(
+    label: 'failed', 
+    message: '2', 
+);
+```
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+#### Or by calling the predefined theme methods: 
+```dart
+Badge(...).red();
+```
+
+## Additional info
+
+There is a complete example [here](https://github.com/nombrekeff/cli_badges_dart/tree/main/example)
+
+If you encounter any problems or fancy a feature to be added please head over to the GitHub [repository](https://github.com/nombrekeff/cli_badges_dart/) and [drop an issue](https://github.com/nombrekeff/cli_badges_dart/issues/new).
+

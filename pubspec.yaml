@@ -1,12 +1,12 @@
 name: cli_badges
-description: A new Flutter package project.
+description: Print badges to the terminal. Yup, those nifty little thingies we use on readmes, but for CLI apps.
 version: 0.0.1
-homepage:
+homepage: https://github.com/nombrekeff/cli_badges_dart#readme
+repository: https://github.com/nombrekeff/cli_badges_dart
+issue_tracker: https://github.com/nombrekeff/cli_badges_dart/issues
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
-
-dependencies:
 
 dev_dependencies:
   test:
