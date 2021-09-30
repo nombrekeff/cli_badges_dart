@@ -97,9 +97,9 @@ Themes are a way to store badge configuration for repeated use.
 
 |         |                                           |           |                                               |
 | ------- | ----------------------------------------- | --------- | --------------------------------------------- |
-| `blue`  | ![theme-blue](../images/theme-blue.png)   | `cyan`    | ![theme-cyan](../images/theme-cyan.png)       |
-| `green` | ![theme-green](../images/theme-green.png) | `magenta` | ![theme-magenta](../images/theme-magenta.png) |
-| `red`   | ![theme-red](../images/theme-red.png)     | `yellow`  | ![theme-yellow](../images/theme-yellow.png)   |
+| `blue`  | ![theme-blue](./images/theme-blue.png)   | `cyan`    | ![theme-cyan](./images/theme-cyan.png)       |
+| `green` | ![theme-green](./images/theme-green.png) | `magenta` | ![theme-magenta](./images/theme-magenta.png) |
+| `red`   | ![theme-red](./images/theme-red.png)     | `yellow`  | ![theme-yellow](./images/theme-yellow.png)   |
 
 You can also **swap** all themes, this means properties from label will be applied to message and vice versa.
 
@@ -108,11 +108,13 @@ You can also **swap** all themes, this means properties from label will be appli
 - **red** : Red Message Background
 - **green** : Green Message Background
 - **blue** : Blue Message Background
-- **yellow** : Black Colored Message on Yellow Background
-- **cyan** : Black Colored Message on Cyan Background
-- **magenta** : Black Colored Message on Magenta Background
-- **success** : (_'Success'_) Message on Green Background
-- **failed** : (_'Failed'_) Message on Red Background
+- **yellow** : Black Colored Message on yellow Background
+- **cyan** : Black Colored Message on cyan Background
+- **magenta** : Black Colored Message on magenta Background
+- **success** : (_'Success'_) Message on green Background
+- **failed** : (_'Failed'_) Message on red Background
+- **warning** : (_'Failed'_) Message on yellow Background
+- **info** : (_'Info'_) Message on blue Background
 
 
 ### Colors
