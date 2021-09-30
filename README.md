@@ -64,29 +64,6 @@ var failedBadge = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
 print(failedBadge);
 ```
 
-There are 3 main ways to create a themed badge:
-#### 1 - Passing in the theme directly to the Badge constructor:
-```dart
-Badge(
-    label: 'failed', 
-    message: '2', 
-    theme: BadgeTheme.red,
-);
-```
-
-#### 2 - Using named constructors:
-```dart
-Badge.red(
-    label: 'failed', 
-    message: '2', 
-);
-```
-
-#### 3 - Or by calling the predefined theme methods: 
-```dart
-Badge(...).red();
-```
-
 ### Some more examples:
 You could create a donate badge:
 
@@ -115,7 +92,30 @@ print(onlyLabel);
 
 A badge is conformed of a **label** and a **message** `<label>:<message>`. Each segment can be customized, by changing bg color, text color and style.
 
-## Colors
+## Themes <!-- omit in toc -->
+Themes are a way to store badge configuration for repeated use.
+
+|         |                                           |           |                                               |
+| ------- | ----------------------------------------- | --------- | --------------------------------------------- |
+| `blue`  | ![theme-blue](../images/theme-blue.png)   | `cyan`    | ![theme-cyan](../images/theme-cyan.png)       |
+| `green` | ![theme-green](../images/theme-green.png) | `magenta` | ![theme-magenta](../images/theme-magenta.png) |
+| `red`   | ![theme-red](../images/theme-red.png)     | `yellow`  | ![theme-yellow](../images/theme-yellow.png)   |
+
+You can also **swap** all themes, this means properties from label will be applied to message and vice versa.
+
+### Inbuilt themes
+
+- **red** : Red Message Background
+- **green** : Green Message Background
+- **blue** : Blue Message Background
+- **yellow** : Black Colored Message on Yellow Background
+- **cyan** : Black Colored Message on Cyan Background
+- **magenta** : Black Colored Message on Magenta Background
+- **success** : (_'Success'_) Message on Green Background
+- **failed** : (_'Failed'_) Message on Red Background
+
+
+### Colors
 
 This is the list of all available colors:
 * red
@@ -135,18 +135,29 @@ This is the list of all available colors:
 * brightCyan
 * brightWhite
 
-### Inbuilt Themes <!-- omit in toc -->
+### Using themes
+There are 3 main ways to create a themed badge:
+#### 1 - Passing in the theme directly to the Badge constructor:
+```dart
+Badge(
+    label: 'failed', 
+    message: '2', 
+    theme: BadgeTheme.red,
+);
+```
 
-- **red** : Red Message Background
-- **green** : Green Message Background
-- **blue** : Blue Message Background
-- **yellow** : Black Colored Message on Yellow Background
-- **cyan** : Black Colored Message on Cyan Background
-- **magenta** : Black Colored Message on Magenta Background
-- **success** : (_'Success'_) Message on Green Background
-- **failed** : (_'Failed'_) Message on Red Background
-- **warning** : (_'Warning'_) Message on Yellow Background
-- **info** : (_'Warning'_) Message on Blue Background
+#### 2 - Using named constructors:
+```dart
+Badge.red(
+    label: 'failed', 
+    message: '2', 
+);
+```
+
+#### 3 - Or by calling the predefined theme methods: 
+```dart
+Badge(...).red();
+```
 
 ## Additional info
 
@@ -160,7 +171,6 @@ If you encounter any problems or fancy a feature to be added please head over to
 
 - `Python` [@haideralipunjabi/cli-badges](https://github.com/haideralipunjabi/cli-badges)
 - `Deno` [@Delta456/cli_badges](https://github.com/Delta456/cli_badges)
-
 
 ## Support the project <!-- omit in toc -->
 
