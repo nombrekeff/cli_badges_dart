@@ -170,7 +170,7 @@ If you encounter any problems or fancy a feature to be added please head over to
 - `Python` [@haideralipunjabi/cli-badges](https://github.com/haideralipunjabi/cli-badges)
 - `Deno` [@Delta456/cli_badges](https://github.com/Delta456/cli_badges)
 
-## Support the project <!-- omit in toc -->
+## Support the project
 
 I tend to open source anything I can, and love to help people that might need help with the project.
 
