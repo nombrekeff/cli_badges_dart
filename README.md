@@ -16,13 +16,9 @@ and the Flutter guide for
   ![](https://vectr.com/kerff/ddbmvyZmm.svg?width=600&height=300&select=aNbKxciPh)
   
   Quirky little dart library for generating badges for your cli apps.
+
+  [![Pub Version](https://img.shields.io/pub/v/cli_badges?style=flat-square)](https://pub.dev/packages/cli_badges)
   
-  <!-- ![GitHub file size in bytes](https://img.shields.io/github/size/nombrekeff/cli-badges/index.js?style=flat-square)
-  [![npm](https://img.shields.io/npm/v/cli-badges?label=version&style=flat-square)](https://www.npmjs.com/package/cli-badges)
-   -->
-
-<!-- TODO: add badges -->
-
 </div>
 
 ---
