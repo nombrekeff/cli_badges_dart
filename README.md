@@ -51,7 +51,7 @@ print(
 
 The above would output something similar to the terminal:
 
-![](./images/output-example.png)
+![](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/output-example.png)
 ## Usage
 
 Usage is simple, import the package and start creating Badges!
@@ -73,7 +73,7 @@ var donateBadge = Badge.cyan(label: '❤️ donate', message: 'please?');
 print(donateBadge);
 ```
 
-![](./images/donate-output-example.png)
+![](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/donate-output-example.png)
 
 You can also only show the label:
 
@@ -95,11 +95,11 @@ A badge is conformed of a **label** and a **message** `<label>:<message>`. Each 
 ## Themes <!-- omit in toc -->
 Themes are a way to store badge configuration for repeated use.
 
-|         |                                           |           |                                               |
-| ------- | ----------------------------------------- | --------- | --------------------------------------------- |
-| `blue`  | ![theme-blue](./images/theme-blue.png)   | `cyan`    | ![theme-cyan](./images/theme-cyan.png)       |
-| `green` | ![theme-green](./images/theme-green.png) | `magenta` | ![theme-magenta](./images/theme-magenta.png) |
-| `red`   | ![theme-red](./images/theme-red.png)     | `yellow`  | ![theme-yellow](./images/theme-yellow.png)   |
+|         |                                                                                                |           |                                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------- |
+| `blue`  | ![theme-blue](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/theme-blue.png)   | `cyan`    | ![theme-cyan](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/theme-cyan.png)       |
+| `green` | ![theme-green](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/theme-green.png) | `magenta` | ![theme-magenta](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/theme-magenta.png) |
+| `red`   | ![theme-red](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/theme-red.png)     | `yellow`  | ![theme-yellow](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/theme-yellow.png)   |
 
 You can also **swap** all themes, this means properties from label will be applied to message and vice versa.
 
