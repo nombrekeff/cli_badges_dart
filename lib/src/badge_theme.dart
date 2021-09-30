@@ -2,9 +2,15 @@ import 'package:cli_badges/src/colors.dart';
 
 class BadgeTheme {
   static final BadgeTheme primary = BadgeTheme();
-  static final BadgeTheme green = BadgeTheme(messageBg: 'green');
+  static final BadgeTheme green = BadgeTheme(
+    messageBg: 'green',
+    messageColor: 'black',
+  );
   static final BadgeTheme red = BadgeTheme(messageBg: 'red');
-  static final BadgeTheme yellow = BadgeTheme(messageBg: 'yellow');
+  static final BadgeTheme yellow = BadgeTheme(
+    messageBg: 'yellow',
+    messageColor: 'black',
+  );
   static final BadgeTheme blue = BadgeTheme(messageBg: 'blue');
   static final BadgeTheme magenta = BadgeTheme(messageBg: 'magenta');
   static final BadgeTheme cyan = BadgeTheme(messageBg: 'cyan');
