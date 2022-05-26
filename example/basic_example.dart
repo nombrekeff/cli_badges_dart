@@ -6,7 +6,12 @@ void main() {
       Badge(
         label: 'test',
         message: 'badge',
-        theme: BadgeTheme(),
+        theme: BadgeTheme(labelBg: 'brightMagenta'),
+      ),
+      Badge(
+        label: 'test',
+        message: 'badge',
+        theme: BadgeTheme(labelBgCode: 105),
       ),
       Badge(
         label: 'test',

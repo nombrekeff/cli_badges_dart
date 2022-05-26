@@ -5,16 +5,24 @@
 /// ```
 String paddToFitWidth(String? string, int? width) {
   if (string == null) return '';
-
-  var sLength = string.length;
-
-  if (width == null || width <= 0) {
-    // one space on each side
-    width = sLength + 2;
+  if (width != null && width <= 0) {
+    throw ArgumentError.value(
+      width,
+      'width',
+      'must be greater than 0',
+    );
   }
 
-  var halfWith = ((width - sLength) / 2).ceil();
-  var paddStr = ' ' * halfWith;
+  final stringLength = string.length;
+
+  int effectiveWidth = width ?? 0;
+  if (width == null || width <= 0) {
+    // add one space on each side
+    effectiveWidth = stringLength + 2;
+  }
+
+  final halfWith = ((effectiveWidth - stringLength) / 2).ceil();
+  final paddStr = ' ' * halfWith;
 
   return paddStr + string + paddStr;
 }
