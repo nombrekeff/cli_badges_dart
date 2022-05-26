@@ -1,7 +1,11 @@
 import 'package:cli_badges/src/badge_theme.dart';
 import 'package:cli_badges/src/util.dart';
 
+/// Main class to help you create badges, set themes, etc...
+///
+/// For more information, take a look at [the readme](https://github.com/nombrekeff/cli_badges_dart#readme)
 class Badge {
+  /// Joins the provided badges into a string separated by [separator]
   static inline(
     List<Badge> badges, {
     String separator = ' ',
@@ -12,10 +16,19 @@ class Badge {
     return badges.join(separator * separation);
   }
 
+  /// Label (or left side) of the badge
   final String label;
+
+  /// Message (or right side) of the badge
   final String? message;
+
+  /// Holds the configuration to color the badge
   final BadgeTheme theme;
+
+  /// Specifies a fixed length for the label
   final int? labelWidth;
+
+  /// Specifies a fixed length for the message
   final int? messageWidth;
 
   Badge({
@@ -107,6 +120,8 @@ class Badge {
   Badge info() => copyWith(theme: BadgeTheme.blue);
   Badge warning() => copyWith(theme: BadgeTheme.yellow);
 
+  /// Creates a copy of this badge but with the given fields replaced with
+  /// the new values.
   Badge copyWith({
     String? label,
     String? message,
@@ -123,6 +138,7 @@ class Badge {
     );
   }
 
+  /// Swaps message and label, as well as the theme and widths
   swapped() {
     return Badge(
       label: label,
@@ -143,11 +159,11 @@ class Badge {
 
   @override
   toString() {
-    var label = _getLabel();
-    var message = _getMessage();
+    final label = _getLabel();
+    final message = _getMessage();
 
-    var coloredLabel = theme.colorLabel(label);
-    var coloredMessage = theme.colorMessage(message);
+    final coloredLabel = theme.colorLabel(label);
+    final coloredMessage = theme.colorMessage(message);
 
     return '$coloredLabel$coloredMessage';
   }
