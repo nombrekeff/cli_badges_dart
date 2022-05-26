@@ -18,3 +18,5 @@ String paddToFitWidth(String? string, int? width) {
 
   return paddStr + string + paddStr;
 }
+
+String capitalize(String s) => s[0].toUpperCase() + s.substring(1);

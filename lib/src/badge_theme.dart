@@ -1,4 +1,4 @@
-import 'package:cli_badges/src/colors.dart';
+import 'package:cli_badges/src/colorer.dart';
 
 /// Class to hold the theme configuration for [Badge]
 ///
@@ -25,83 +25,86 @@ class BadgeTheme {
   static final BadgeTheme magenta = BadgeTheme(messageBg: 'magenta');
   static final BadgeTheme cyan = BadgeTheme(messageBg: 'cyan');
 
-  final Colors _colors = Colors();
+  late IColorer colorer;
 
   /// Background color name for the badge's message (E.g: red, black, green, blue, cyan, etc...)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart`
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final String messageBg;
 
   /// Foreground color name for the badge's message (E.g: red, black, green, blue, cyan, etc...)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart`
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final String messageColor;
 
   /// Background color code for the badge's message (i.e. an int ranging from 0 to 255)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart`
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final int? messageBgCode;
 
   /// Foreground color code for the badge's message (i.e. an int ranging from 0 to 255)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart`
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final int? messageColorCode;
 
   /// Background color name for the badge's label (E.g: red, black, green, blue, cyan, etc...)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart`
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final String labelBg;
 
   /// Foreground color name for the badge's label (E.g: red, black, green, blue, cyan, etc...)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart`
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final String labelColor;
 
   /// Background color code for the badge's label (i.e. an int ranging from 0 to 255)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final int? labelBgCode;
 
   /// Foreground color code for the badge's label (i.e. an int ranging from 0 to 255)
   ///
-  /// For a complete list of colors check `/lib/src/colors.dart`
+  /// For a complete list of colors check [the docs](https://github.com/nombrekeff/cli_badges_dart#colors)
   final int? labelColorCode;
 
   BadgeTheme({
     this.messageBg = 'blue',
-    this.messageColor = 'backgroundWhite',
+    this.messageColor = 'white',
     this.labelBg = 'brightBlack',
     this.labelColor = 'white',
     this.messageBgCode,
     this.messageColorCode,
     this.labelBgCode,
     this.labelColorCode,
-  });
+    IColorer? colorer,
+  }) {
+    this.colorer = colorer ?? DefaultColorer();
+  }
 
   /// Returns the colored representation of the badge's label
   String colorLabel(String label) {
     final labelWithBg = labelBgCode == null
-        ? _colors.mappedBgColor(labelBg, label)
-        : _colors.color256(labelBgCode!, label);
+        ? colorer.backgroundFromName(labelBg, label)
+        : colorer.colorFromCode(labelBgCode!, label);
 
     return labelColorCode == null
-        ? _colors.mappedColor(labelColor, labelWithBg)
-        : _colors.color256(labelColorCode!, labelWithBg);
+        ? colorer.colorFromName(labelColor, labelWithBg)
+        : colorer.colorFromCode(labelColorCode!, labelWithBg);
   }
 
   /// Returns the colored representation of the badge's message
-  colorMessage(String message) {
+  String colorMessage(String message) {
     final messageWithBg = messageBgCode == null
-        ? _colors.mappedBgColor(messageBg, message)
-        : _colors.color256(messageBgCode!, message);
+        ? colorer.backgroundFromName(messageBg, message)
+        : colorer.colorFromCode(messageBgCode!, message);
 
     return messageColorCode == null
-        ? _colors.mappedColor(messageColor, messageWithBg)
-        : _colors.color256(messageColorCode!, messageWithBg);
+        ? colorer.colorFromName(messageColor, messageWithBg)
+        : colorer.colorFromCode(messageColorCode!, messageWithBg);
   }
 
   /// Swaps message and label styles. The color from the label will be swapped with the color from the message, and vice versa.
-  swapped() {
+  BadgeTheme swapped() {
     return BadgeTheme(
       messageBg: labelBg,
       labelBg: messageBg,
@@ -112,7 +115,7 @@ class BadgeTheme {
 
   /// Creates a copy of this badge theme but with the given fields replaced with
   /// the new values.
-  copyWith({
+  BadgeTheme copyWith({
     String? messageBg,
     String? messageColor,
     String? labelBg,

@@ -11,7 +11,7 @@ class Badge {
     String separator = ' ',
     int separation = 2,
   }) {
-    assert(separation > 0, 'Separation must be a positive number');
+    assert(separation > 0, '[separation] must be a positive number');
 
     return badges.join(separator * separation);
   }
@@ -139,7 +139,7 @@ class Badge {
   }
 
   /// Swaps message and label, as well as the theme and widths
-  swapped() {
+  Badge swapped() {
     return Badge(
       label: label,
       message: message,
@@ -158,7 +158,7 @@ class Badge {
   }
 
   @override
-  toString() {
+  String toString() {
     final label = _getLabel();
     final message = _getMessage();
 
