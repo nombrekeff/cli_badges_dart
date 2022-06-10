@@ -143,11 +143,11 @@ class Badge {
 
   @override
   toString() {
-    var label = _getLabel();
-    var message = _getMessage();
+    final label = _getLabel();
+    final message = _getMessage();
 
-    var coloredLabel = theme.colorLabel(label);
-    var coloredMessage = theme.colorMessage(message);
+    final coloredLabel = theme.colorLabel(label);
+    final coloredMessage = theme.colorMessage(message);
 
     return '$coloredLabel$coloredMessage';
   }
