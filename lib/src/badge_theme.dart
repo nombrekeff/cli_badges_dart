@@ -71,7 +71,7 @@ class BadgeTheme {
       ..xterm(fg)
       ..xterm(bg, bg: true);
 
-    return pen(text);
+    return pen.write(text);
   }
 
   colorLabel(String label) {
