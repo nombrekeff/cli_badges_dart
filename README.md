@@ -32,10 +32,15 @@ Print badges to the terminal. Yup, those nifty little thingies we use on readmes
 
 This is what it can do:
 ```dart
-var failedBadge  = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
-var successBadge = Badge(label: 'success', message: '2').green();
-var skippedBadge = Badge.yellow(label: 'skipped',  message: '2');
+final failedBadge  = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
+final successBadge = Badge(label: 'success', message: '2').green();
+final skippedBadge = Badge.yellow(label: 'skipped',  message: '2');
+final totalBadge = Badge.blue(label: 'total',  message: '6');
 
+// You can print a single badge
+print(totalBadge);
+
+// or use [Badge.inline] to join badges in a single line separated by a space
 print(
     Badge.inline([
         failedBadge, 
@@ -48,6 +53,8 @@ print(
 The above would output something similar to the terminal:
 
 ![](https://github.com/nombrekeff/cli_badges_dart/blob/main/images/output-example.png)
+
+
 ## Usage
 
 Usage is simple, import the package and start creating Badges!
@@ -55,7 +62,7 @@ Usage is simple, import the package and start creating Badges!
 ```dart
 import 'package:cli_badges/cli_badges.dart';
 
-var failedBadge = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
+final failedBadge = Badge(label: 'failed', message: '2', theme: BadgeTheme.red);
 
 print(failedBadge);
 ```
@@ -64,7 +71,7 @@ print(failedBadge);
 You could create a donate badge:
 
 ```dart
-var donateBadge = Badge.cyan(label: '❤️ donate', message: 'please?');
+final donateBadge = Badge.cyan(label: '❤️ donate', message: 'please?');
 
 print(donateBadge);
 ```
@@ -74,7 +81,7 @@ print(donateBadge);
 You can also only show the label:
 
 ```dart
-var onlyLabel = Badge(
+final onlyLabel = Badge(
     label: '❤️ donate', 
     labelColorCode: 169
 );
@@ -84,11 +91,11 @@ print(onlyLabel);
 
 > ###### Example output is a mock, console output will vary slightly from terminal to terminal.
 
-## Badge Structure <!-- omit in toc -->
+## Badge Structure
 
 A badge is conformed of a **label** and a **message** `<label>:<message>`. Each segment can be customized, by changing bg color, text color and style.
 
-## Themes <!-- omit in toc -->
+## Themes
 Themes are a way to store badge configuration for repeated use.
 
 |         |                                                                                                |           |                                                                                                    |
@@ -112,7 +119,6 @@ You can also **swap** all themes, this means properties from label will be appli
 - **warning** : (_'Failed'_) Message on yellow Background
 - **info** : (_'Info'_) Message on blue Background
 
-
 ### Colors
 
 This is the list of all available colors:
@@ -135,6 +141,7 @@ This is the list of all available colors:
 
 ### Using themes
 There are 3 main ways to create a themed badge:
+
 #### 1 - Passing in the theme directly to the Badge constructor:
 ```dart
 Badge(
